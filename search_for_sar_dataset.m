@@ -78,3 +78,13 @@ else
 end
 search_str = [month_start_search_str 'T00:00:00.000Z TO ' month_end_search_str 'T23:59:59.999Z'];
 fprintf(['( footprint:"Intersects(POLYGON((' num2str(lon_min) ' ' num2str(lat_min) ',' num2str(lon_max) ' ' num2str(lat_min) ',' num2str(lon_max) ' ' num2str(lat_max) ',' num2str(lon_min) ' ' num2str(lat_max) ',' num2str(lon_min) ' ' num2str(lat_min) ')))" ) AND ( beginPosition:[' search_str '] AND endPosition:[' search_str '] ) AND (platformname:Sentinel-1 AND filename:S1A_* AND producttype:SLC)' '\n'])
+fprintf('\n\n\n\n')
+
+% 4 for ISCE geocoding
+fprintf('this is for ISCE geocoding\n')
+fprintf(['<property name="geocode bounding box">[' num2str(lat_min-0.5) ',' num2str(lat_max+0.5) ',' num2str(lon_min-0.5) ',' num2str(lon_max+0.5) ']</property>' '\n'])
+
+
+
+
+
