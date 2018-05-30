@@ -84,14 +84,14 @@ fprintf('\n\n\n\n')
 fprintf('this is for WINSAR\n')
 fprintf(['POLYGON((' num2str(lon_min) ' ' num2str(lat_max) ',' num2str(lon_min) ' ' num2str(lat_min) ',' num2str(lon_max) ' ' num2str(lat_min) ',' num2str(lon_max) ' ' num2str(lat_max) ',' num2str(lon_min) ' ' num2str(lat_max) '))' '\n'])
 if month_start_search < 10
-    fprintf(['0' num2str(month_start_search) '/01/' num2str(year_start_search-1) '\n'])
+    fprintf(['0' num2str(month_start_search) '/01/' num2str(year_start_search-2) '\n'])
 else
-    fprintf([num2str(month_start_search) '/01/' num2str(year_start_search-1) '\n'])
+    fprintf([num2str(month_start_search) '/01/' num2str(year_start_search-2) '\n'])
 end
 if month_end_search < 10
-    fprintf(['0' num2str(month_end_search) '/01/' num2str(year_end_search+1) '\n'])
+    fprintf(['0' num2str(month_end_search) '/01/' num2str(year_end_search+2) '\n'])
 else
-    fprintf([num2str(month_end_search) '/01/' num2str(year_end_search+1) '\n'])
+    fprintf([num2str(month_end_search) '/01/' num2str(year_end_search+2) '\n'])
 end
 fprintf('\n\n\n\n')
 
