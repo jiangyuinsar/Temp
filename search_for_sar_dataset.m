@@ -80,11 +80,21 @@ search_str = [month_start_search_str 'T00:00:00.000Z TO ' month_end_search_str '
 fprintf(['( footprint:"Intersects(POLYGON((' num2str(lon_min) ' ' num2str(lat_min) ',' num2str(lon_max) ' ' num2str(lat_min) ',' num2str(lon_max) ' ' num2str(lat_max) ',' num2str(lon_min) ' ' num2str(lat_max) ',' num2str(lon_min) ' ' num2str(lat_min) ')))" ) AND ( beginPosition:[' search_str '] AND endPosition:[' search_str '] ) AND (platformname:Sentinel-1 AND filename:S1A_* AND producttype:SLC)' '\n'])
 fprintf('\n\n\n\n')
 
-% 4 for ISCE geocoding
+% 4 for WINSAR
+fprintf('this is for WINSAR\n')
+fprintf(['POLYGON((' num2str(lon_min) ' ' num2str(lat_max) ',' num2str(lon_min) ' ' num2str(lat_min) ',' num2str(lon_max) ' ' num2str(lat_min) ',' num2str(lon_max) ' ' num2str(lat_max) ',' num2str(lon_min) ' ' num2str(lat_max) '))' '\n'])
+if month_start_search < 10
+    fprintf(['0' num2str(month_start_search) '/01/' num2str(year_start_search-1) '\n'])
+else
+    fprintf([num2str(month_start_search) '/01/' num2str(year_start_search-1) '\n'])
+end
+if month_end_search < 10
+    fprintf(['0' num2str(month_end_search) '/01/' num2str(year_end_search+1) '\n'])
+else
+    fprintf([num2str(month_end_search) '/01/' num2str(year_end_search+1) '\n'])
+end
+fprintf('\n\n\n\n')
+
+% 5 for ISCE geocoding
 fprintf('this is for ISCE geocoding\n')
 fprintf(['<property name="geocode bounding box">[' num2str(lat_min-0.5) ',' num2str(lat_max+0.5) ',' num2str(lon_min-0.5) ',' num2str(lon_max+0.5) ']</property>' '\n'])
-
-
-
-
-
